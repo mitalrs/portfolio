@@ -1,11 +1,13 @@
 import { useState } from 'react';
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
+import  useGlobalContext  from '../Context/useGlobalContext'
 
 
 function ToggleBtn({light,setLight}){
     const[openPopUp,setOpenPopUp]=useState(false);
     // const[light,setLight]=useState(false);
+    const { dispatch } = useGlobalContext();
  return(
     <div className="absolute top-2 right-2">
         <button onClick={()=>setOpenPopUp(true)} className='relative'>
@@ -21,6 +23,7 @@ function ToggleBtn({light,setLight}){
              )
             }
         </button>
+        <button onClick={() => dispatch({ type: "INCRIECE" })}>inc</button>
     </div>
  );
 }
