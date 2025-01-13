@@ -1,6 +1,6 @@
 import { createContext, useReducer } from 'react';
-import { initialState } from './initialState';
-import { reducer } from './reducer';
+import { initialState } from './initialState.js';
+import { reducer } from './reducer.js';
 
 export const defaultContext = {
   state: initialState,

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { FaRegMoon } from "react-icons/fa";
 import { MdOutlineLightMode } from "react-icons/md";
-import  useGlobalContext  from '../Context/useGlobalContext'
+import  useGlobalContext  from '../Context/useGlobalContext.js'
 
 
 function ToggleBtn({light,setLight}){

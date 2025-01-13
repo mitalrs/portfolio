@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { GlobalContext } from "./index";
+import { GlobalContext } from "./index.jsx";
 
 const useGlobalContext = () => {
   const { state, dispatch } = useContext(GlobalContext);
