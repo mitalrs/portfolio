@@ -4,7 +4,7 @@ import  useGlobalContext  from '../Context/useGlobalContext.js';
 import ToggleBtn from '../Components/ToggleBtn.js';
 
 const Home = () => {
-  const [light, setLight] = useState(false);
+  const [light, setLight] = useState(true);
   const { state } = useGlobalContext();
 
     return (

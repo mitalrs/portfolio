@@ -5,14 +5,17 @@ import reportWebVitals from "./reportWebVitals.js";
 import { GlobalContextProvider } from "./Context/index.jsx";
 import { RouterProvider } from "react-router";
 import router from "./Routers/routers.js";
+import { HeroUIProvider } from "@heroui/react";
 
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <GlobalContextProvider>
-    <RouterProvider router={router} />
-    </GlobalContextProvider>
+    <HeroUIProvider>
+      <GlobalContextProvider>
+        <RouterProvider router={router} />
+      </GlobalContextProvider>
+    </HeroUIProvider>
   </React.StrictMode>
 );
 
