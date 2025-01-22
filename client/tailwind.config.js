@@ -11,63 +11,79 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [heroui({
-    themes: {
-      light: {
-        primary: {
-          50: '#ffe2e7',
-          100: '#ffb3bb',
-          200: '#fc8393',
-          300: '#f9526d',
-          400: '#f6224b',
-          500: '#dd0939',
-          600: '#ad0320',
-          700: '#7c000e',
-          800: '#4d0002',
-          900: '#200400',
+  plugins: [
+    heroui({
+      themes: {
+        light: {
+          layout: {
+            disabledOpacity: '0.3',
+            radius: {
+              small: '1px',
+              medium: '2px',
+              large: '4px'
+            },
+            borderWidth: {
+              small: '1px',
+              medium: '2px',
+              large: '3px'
+            }
+          }, // light theme layout tokens
+          colors: {
+            background: '#c7afde',
+            foreground: '#000',
+            primary: {
+              50: '#3B096C',
+              100: '#520F83',
+              200: '#7318A2',
+              300: '#9823C2',
+              400: '#c031e2',
+              500: '#DD62ED',
+              600: '#F182F6',
+              700: '#FCADF9',
+              800: '#FDD5F9',
+              900: '#FEECFE',
+              DEFAULT: '#DD62ED',
+              foreground: '#ffffff'
+            },
+            focus: '#F182F6'
+          } // light theme colors
         },
-        success: {
-          50: '#e1ffde',
-          100: '#b8fdb1',
-          200: '#90fa82',
-          300: '#6cf852',
-          400: '#4af622',
-          500: '#37dd09',
-          600: '#1dac03',
-          700: '#0b7b00',
-          800: '#004b04',
-          900: '#001b07',
+        dark: {
+          layout: {
+            disabledOpacity: '0.3',
+            radius: {
+              small: '1px',
+              medium: '2px',
+              large: '4px'
+            },
+            borderWidth: {
+              small: '1px',
+              medium: '2px',
+              large: '3px'
+            }
+          }, // dark theme layout tokens
+          colors: {
+            background: '#0D001A',
+            foreground: '#ffffff',
+            primary: {
+              50: '#3B096C',
+              100: '#520F83',
+              200: '#7318A2',
+              300: '#9823C2',
+              400: '#c031e2',
+              500: '#DD62ED',
+              600: '#F182F6',
+              700: '#FCADF9',
+              800: '#FDD5F9',
+              900: '#FEECFE',
+              DEFAULT: '#DD62ED',
+              foreground: '#ffffff'
+            },
+            focus: '#F182F6'
+          } // dark theme colors
         },
-        background: '#ffffff', // White background for light mode
-      },
-      dark: {
-        primary: {
-          50: '#ffe2e7',
-          100: '#ffb3bb',
-          200: '#fc8393',
-          300: '#f9526d',
-          400: '#f6224b',
-          500: '#dd0939',
-          600: '#ad0320',
-          700: '#7c000e',
-          800: '#4d0002',
-          900: '#200400',
-        },
-        success: {
-          50: '#e1ffde',
-          100: '#b8fdb1',
-          200: '#90fa82',
-          300: '#6cf852',
-          400: '#4af622',
-          500: '#37dd09',
-          600: '#1dac03',
-          700: '#0b7b00',
-          800: '#004b04',
-          900: '#001b07',
-        },
-        background: '#000000', // Black background for dark mode
-      },
-    },
-  })],
+      }
+    })
+  ],
 }
 
