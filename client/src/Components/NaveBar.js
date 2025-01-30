@@ -1,4 +1,5 @@
-import {Navbar, NavbarBrand, NavbarContent, NavbarItem, Link, Button} from "@heroui/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@heroui/react";
+import { Link } from "react-router";
 // import {useTheme} from "@heroui/use-theme";
 
 
@@ -15,8 +16,18 @@ export const AcmeLogo = () => {
   );
 };
 
-export default function NavbarComp({setTheme}) {
+export default function NavbarComp({ setTheme }) {
   // const { theme, setTheme } = useTheme()
+  const navBarContent = [
+    { "title": "Home", "link": "/" },
+    { "title": "Projects", "link": "/projects" },
+    { "title": "Skills", "link": "/skills" },
+    { "title": "Snippets", "link": "/snippets" },
+    { "title": "Blog", "link": "/blog" },
+    { "title": "Statistic", "link": "/statistic" },
+    { "title": "Certifications", "link": "/certifications" },
+    { "title": "Anime", "link": "/anime" },
+  ];
 
   return (
     <Navbar>
@@ -25,33 +36,29 @@ export default function NavbarComp({setTheme}) {
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
       {/* The current theme is: {theme} */}
-      <button onClick={() => setTheme('light')}>Light Mode</button>
-      <button onClick={() => setTheme('dark')}>Dark Mode</button>
       <NavbarContent className="sm:flex gap-4" justify="center">
-        <NavbarItem>
-          <Link color="foreground" href="/">
-            home
-          </Link>
-        </NavbarItem>
+        {navBarContent?.map((item, index) => (
+          <NavbarItem>
+            <Link color="foreground" to={item.link}>
+              {item.title}
+            </Link>
+          </NavbarItem>
+        ))
+        }
+
         <NavbarItem isActive>
-          <Link aria-current="page" href="/about">
+          <Link aria-current="page" to="/about">
             about
           </Link>
         </NavbarItem>
-        {/* <NavbarItem>
-          <Link color="foreground" href="#">
-            Integrations
-          </Link>
-        </NavbarItem> */}
+
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem className="hidden lg:flex">
-          <Link href="#">Login</Link>
+        <NavbarItem>
+        <Button onPress={() => setTheme('light')}>Light Mode</Button>
         </NavbarItem>
         <NavbarItem>
-          <Button as={Link} color="primary" href="#" variant="flat">
-            Sign Up
-          </Button>
+        <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
         </NavbarItem>
       </NavbarContent>
     </Navbar>
