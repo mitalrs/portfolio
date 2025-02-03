@@ -1,5 +1,6 @@
 import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@heroui/react";
 import { Link } from "react-router";
+import  ToggleBtn from "./ToggleBtn.js";
 // import {useTheme} from "@heroui/use-theme";
 
 
@@ -60,6 +61,7 @@ export default function NavbarComp({ setTheme }) {
         <NavbarItem>
         <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
         </NavbarItem>
+        <ToggleBtn />
       </NavbarContent>
     </Navbar>
   );
