@@ -17,8 +17,9 @@ export const AcmeLogo = () => {
   );
 };
 
-export default function NavbarComp({ setTheme }) {
+export default function NavbarComp() {
   // const { theme, setTheme } = useTheme()
+  // const { state } = useGlobalContext();
   const navBarContent = [
     { "title": "Home", "link": "/" },
     { "title": "Projects", "link": "/projects" },
@@ -55,12 +56,12 @@ export default function NavbarComp({ setTheme }) {
 
       </NavbarContent>
       <NavbarContent justify="end">
-        <NavbarItem>
+        {/* <NavbarItem>
         <Button onPress={() => setTheme('light')}>Light Mode</Button>
         </NavbarItem>
         <NavbarItem>
         <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
-        </NavbarItem>
+        </NavbarItem> */}
         <ToggleBtn />
       </NavbarContent>
     </Navbar>

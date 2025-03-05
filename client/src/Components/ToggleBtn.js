@@ -1,4 +1,5 @@
 import {Switch} from "@heroui/react";
+import useGlobalContext from "../Context/useGlobalContext.js";
 
 export const MoonIcon = (props) => {
   return (
@@ -39,8 +40,11 @@ export const SunIcon = (props) => {
 };
 
  function ToggleBtn() {
+  const { state, dispatch } = useGlobalContext();
   return (
     <Switch
+    checked={state.theme === "dark"}
+    onChange={() => dispatch({ type: "THEME" })}
       defaultSelected
       color="secondary"
       size="lg"

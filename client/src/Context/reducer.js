@@ -7,6 +7,11 @@ export const reducer = (
       return {
         ...oldState,
         increase: oldState.increase + 1
+      }; 
+      case 'THEME':
+      return {
+        ...oldState,
+        theme: oldState.theme === "light" ? "dark" : "light"
       };             
     default:
       return oldState;
