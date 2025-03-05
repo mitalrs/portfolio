@@ -1,8 +1,6 @@
-import { Navbar, NavbarBrand, NavbarContent, NavbarItem, Button } from "@heroui/react";
+import { Navbar, NavbarBrand, NavbarContent, NavbarItem } from "@heroui/react";
 import { Link } from "react-router";
 import  ToggleBtn from "./ToggleBtn.js";
-// import {useTheme} from "@heroui/use-theme";
-
 
 export const AcmeLogo = () => {
   return (
@@ -18,8 +16,6 @@ export const AcmeLogo = () => {
 };
 
 export default function NavbarComp() {
-  // const { theme, setTheme } = useTheme()
-  // const { state } = useGlobalContext();
   const navBarContent = [
     { "title": "Home", "link": "/" },
     { "title": "Projects", "link": "/projects" },
@@ -37,7 +33,6 @@ export default function NavbarComp() {
         <AcmeLogo />
         <p className="font-bold text-inherit">ACME</p>
       </NavbarBrand>
-      {/* The current theme is: {theme} */}
       <NavbarContent className="sm:flex gap-4" justify="center">
         {navBarContent?.map((item, index) => (
           <NavbarItem>
@@ -56,12 +51,6 @@ export default function NavbarComp() {
 
       </NavbarContent>
       <NavbarContent justify="end">
-        {/* <NavbarItem>
-        <Button onPress={() => setTheme('light')}>Light Mode</Button>
-        </NavbarItem>
-        <NavbarItem>
-        <Button onPress={() => setTheme('dark')}>Dark Mode</Button>
-        </NavbarItem> */}
         <ToggleBtn />
       </NavbarContent>
     </Navbar>
